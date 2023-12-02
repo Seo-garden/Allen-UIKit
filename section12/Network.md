@@ -50,6 +50,7 @@ REST API : 명사형으로 작성, 쿼리파라미터를 사용해 누구나 알
 
 ### Part 3. iOS에서의 네트워킹
 
-URL -> URLSession(브라우저를 키는 객체) -> dataTask(직접 HTTP 메서드를 보내는).resume() => 서버에 요청
+URL -> URLSession(브라우저를 키는 객체) -> dataTask(직접 HTTP 메서드를 보내는){}.resume() => 클로저를 통해서 JSON 데이터로 넘어온다 -> 우리가 쓰는 class/struct 로 변형해야 된다.  데이터를 우리가 원하는 코드로 변형 -> JSONDecoder()
 
-문자열로 된 링크를 선언. -> URL 구조체나 클래스로 변환.  HTTP 는 UTF-8 인코딩 방식을 쓴다.
+Decodable : 데이터를 구조체나 클래스로 변형 <-> Encodable : 구조체나 클래스를 데이터로 변형하는건데 Codable 프로토콜을 채택하면 둘다 사용할 수 있다.
+
